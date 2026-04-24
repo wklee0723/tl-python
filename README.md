@@ -1,7 +1,7 @@
 ## ⚠️ Security Notice & Configuration
 원활한 과제 검토를 위해 **예외적으로** 유효한 API Key와 Index ID가 포함된 `.env` 파일을 압축 파일 내에 첨부하였습니다. 
 
-* **주의:** 본 파일은 과제 채용 담당자의 테스트 편의를 위해 제공되는 것이며, 실제 실무 환경에서는 보안을 위해 `.env` 파일을 공유하거나 버전 관리 시스템(Git)에 포함하지 않는 것을 원칙으로 합니다.
+* **주의:** .env 파일은 과제 채용 담당자의 테스트 편의를 위해 제공하였으며, 실제 실무 환경에서는 보안을 위해 `.env` 파일을 공유하거나 버전 관리 시스템(Git)에 포함하지 않습니다.
 * **사용 후 폐기:** 검토가 완료된 후에는 보안을 위해 해당 키를 즉시 폐기하거나 파일을 삭제해 주시기 바랍니다.
 
 
@@ -48,6 +48,8 @@ The goal is to validate:
 
 ### 4. Project Structure (프로젝트 구조)
 ```
+├── .github/workflows
+│   ├── test.yml            # GitHub Actions workflow 설정 파일
 ├── core/
 │   ├── client.py           # SDK 클라이언트 생성 및 제공
 │   └── config.py           # 환경변수 로딩 및 관리
@@ -120,13 +122,13 @@ allure serve allure-results
 
 
 ### 10. Notes (주의사항)
-- TwelveLabs API는 외부 서비스이므로 간헐적인 500 에러가 발생할 수 있습니다.
+- TwelveLabs API는 간헐적인 500 에러가 발생할 수 있습니다.
 - 해당 경우 테스트 실패가 아닌 Known Issue로 처리하도록 설계되었습니다.
 - 테스트 결과는 네트워크 상태 및 서버 응답 지연에 영향을 받을 수 있습니다.
 
 
 ### 11. Conclusion (결론)
-본 테스트 스위트는 단순한 기능 검증을 넘어, 실제 운영 환경에서 발생할 수 있는 예외 상황과 외부 API의 불안정성까지 고려하여 설계되었습니다. 이를 통해 TwelveLabs SDK를 활용한 서비스의 안정성과 신뢰성을 보장합니다.
+본 테스트는 단순한 기능 검증을 넘어, 실제 운영 환경에서 발생할 수 있는 예외 상황과 외부 API의 불안정성까지 고려하여 설계되었습니다. 이를 통해 TwelveLabs SDK를 활용한 서비스의 안정성과 신뢰성을 보장합니다.
 
 
 
@@ -141,7 +143,7 @@ allure serve allure-results
 
 - Modular Architecture: 코드의 유지보수성을 위해 환경 변수 관리(core/config), 클라이언트 생성(core/client), 유틸리티(utils/search_helper)를 분리하여 구현했습니다.
 
-- Stability First: 외부 API의 불안정성(500 에러 등)을 고려하여, 에러 발생 시 테스트가 무조건 중단되는 대신 상태를 캡처하여 보고하는 방식을 채택했습니다.
+- Stability First: 외부 API의 불안정성(500 에러 등)을 고려하여, 에러 발생 시 테스트가 무조건 중단되는 대신 상태를 체크하여 보고하는 방식을 채택했습니다.
 
 ### 2. Testing Scope Decisions (테스트 범위 결정 근거)
 - Search.query() 집중: 과제 가이드에 따라 search.query() 메서드에 집중했습니다.

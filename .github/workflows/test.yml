@@ -1,18 +1,28 @@
 name: Run Tests
 
-on: [push]
+on:
+  push:
+  pull_request:
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      TWELVELABS_API_KEY: ${{ secrets.TWELVELABS_API_KEY }}
+      TWELVELABS_INDEX_ID: ${{ secrets.TWELVELABS_INDEX_ID }}
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: '3.11'
 
-      - run: pip install -r requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - run: pytest -v
+      - name: Run tests
+        run: pytest -s -v

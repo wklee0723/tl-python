@@ -60,4 +60,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: allure-history
+          publish_dir: allure-history  # 이 폴더 안의 내용만 배포합니다.
+          publish_branch: gh-pages     # 대상 브랜치 명시
+          force_orphan: true           # 기존 이력을 무시하고 새로 생성

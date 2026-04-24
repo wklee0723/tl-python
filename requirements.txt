@@ -1,0 +1,3 @@
+twelvelabs
+pytest
+python-dotenv

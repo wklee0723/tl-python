@@ -37,19 +37,23 @@ TWELVELABS_API_KEY=your_api_key
 TWELVELABS_INDEX_ID=your_index_id
 
 
-## 4. Test Structure (테스트 구성)
-tests/
-├── test_search_basic.py        # 기본 기능 검증
-├── test_search_positive.py     # 정상 시나리오 테스트
-├── test_search_negative.py     # 예외 및 잘못된 입력 테스트
-├── test_search_edge_cases.py   # 엣지 케이스 테스트
-└── test_search_schema.py       # 응답 데이터 구조 검증
-utils/
-└── search_helper.py            # 공통 search wrapper (safe_search)
-core/
-├── config.py                   # 환경변수 로딩 및 관리
-└── client.py                   # SDK client 생성 및 제공
-
+## 4. Project Structure (프로젝트 구조)
+```
+├── core/
+│   ├── client.py           # SDK 클라이언트 생성 및 제공
+│   └── config.py           # 환경변수 로딩 및 관리
+├── tests/
+│   ├── test_search_basic.py      # 기본 기능 검증
+│   ├── test_search_edge_cases.py # 엣지 케이스 테스트
+│   ├── test_search_negative.py   # 예외 및 잘못된 입력 테스트
+│   ├── test_search_positive.py   # 정상 시나리오 테스트
+│   └── test_search_schema.py     # 응답 데이터 구조 검증
+├── utils/
+│   └── search_helper.py    # 공통 search wrapper (safe_search)
+├── .env.example            # 환경변수 설정 가이드
+├── requirements.txt        # 의존성 라이브러리 목록
+└── README.md               # 프로젝트 설명서
+```
 
 ## 5. Key Design (핵심 설계)
 1. Environment Variable Management
@@ -87,10 +91,10 @@ pytest -s -v tests/test_search_basic.py::test_search_with_valid_query
 - URL 구조: `https://<your-github-id>.github.io/<repository-name>/`
 
 2. 로컬에서 확인
-결과 수집
+- 결과 수집
 pytest --alluredir=allure-results
 
-리포트 생성 및 실행
+- 리포트 생성 및 실행
 allure serve allure-results
 
 

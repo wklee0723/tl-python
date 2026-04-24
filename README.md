@@ -1,3 +1,12 @@
+## ⚠️ Security Notice & Configuration
+원활한 과제 검토를 위해 **예외적으로** 유효한 API Key와 Index ID가 포함된 `.env` 파일을 압축 파일 내에 첨부하였습니다. 
+
+* **주의:** 본 파일은 과제 채용 담당자의 테스트 편의를 위해 제공되는 것이며, 실제 실무 환경에서는 보안을 위해 `.env` 파일을 공유하거나 버전 관리 시스템(Git)에 포함하지 않는 것을 원칙으로 합니다.
+* **사용 후 폐기:** 검토가 완료된 후에는 보안을 위해 해당 키를 즉시 폐기하거나 파일을 삭제해 주시기 바랍니다.
+
+
+---
+
 ## TwelveLabs SDK Search Test Suite
 
 ### 1. Overview (개요)
@@ -149,3 +158,4 @@ allure serve allure-results
 - 사용자의 TwelveLabs 계정에 검색 대상이 되는 비디오가 포함된 인덱스가 최소 하나 이상 존재한다고 가정합니다.
 - 환경 변수로 설정된 TWELVELABS_INDEX_ID는 유효한 인덱스 번호여야 합니다.
 - 네트워크 환경은 TwelveLabs API 서버와 통신이 가능한 상태여야 합니다.
+

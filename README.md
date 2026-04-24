@@ -1,4 +1,4 @@
-TwelveLabs SDK Search Test Suite
+# TwelveLabs SDK Search Test Suite
 
 ## 1. Overview (개요)
 - This project provides an automated test suite for the TwelveLabs SDK search.query() functionality.
@@ -123,9 +123,10 @@ allure serve allure-results
 
 
 
+---
 
+# Technical Documentation (기술 문서)
 
-Technical Documentation (기술 문서)
 ## 1. Chosen Approach (접근 방식)
 - Pytest Framework: Python 생태계에서 가장 널리 쓰이고 확장성이 좋은 pytest를 선택했습니다. 특히 fixture를 활용해 SDK 클라이언트를 효율적으로 재사용하도록 설계했습니다.
 

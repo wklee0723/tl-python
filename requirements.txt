@@ -1,3 +1,4 @@
 twelvelabs
 pytest
 python-dotenv
+allure-pytest

@@ -5,11 +5,11 @@ TwelveLabs SDK Search Test Suite
 - 본 프로젝트는 TwelveLabs SDK의 search.query() 기능을 검증하기 위한 자동화 테스트 코드입니다.
 
 The goal is to validate:
-    - Correct behavior under normal conditions
-    - Stability under repeated usage
-    - Robustness against invalid inputs and edge cases
-    - Proper handling of API errors
-    - Integrity of response schema
+- Correct behavior under normal conditions
+- Stability under repeated usage
+- Robustness against invalid inputs and edge cases
+- Proper handling of API errors
+- Integrity of response schema
 
 
 ## 2. Scope & Assumptions (범위 및 가정)
